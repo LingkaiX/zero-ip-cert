@@ -1,0 +1,1 @@
+To test, please run: `go run ./ -ip=[PUBLIC_IP_ON_THIS_MACHINE] -key=[ZEROSSL_API_KEY]`
