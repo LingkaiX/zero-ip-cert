@@ -2,7 +2,6 @@ package ipcert
 
 import (
 	"io"
-	"log"
 	"net"
 	"net/http"
 )
@@ -12,7 +11,6 @@ import (
 func openVerifyServer(fileName, fileContent string, l net.Listener) *http.Server {
 	mux := http.NewServeMux()
 	mux.HandleFunc(VerifyURLPrefix, func(w http.ResponseWriter, r *http.Request) {
-		log.Println("&&&&&&&&&&&&&&&&", r)
 		txt := r.URL.Path[len(VerifyURLPrefix):]
 		if txt == fileName {
 			w.Header().Set("Content-Type", "text/plain; charset=UTF-8")
